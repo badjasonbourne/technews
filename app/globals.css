@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "@radix-ui/themes/styles.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-gray-50;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .news-card {
+    @apply bg-white p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .news-title {
+    @apply text-xl font-medium text-gray-900 mb-2;
+  }
+  
+  .news-excerpt {
+    @apply text-gray-600 leading-relaxed;
   }
 }
